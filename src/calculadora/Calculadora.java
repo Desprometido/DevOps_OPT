@@ -16,10 +16,10 @@ public class Calculadora {
 
         // Ciclo while que repete até que o operador seja válido
         while (!operacaoValida) {
-            System.out.print("Digite a operação (+, -, *, /): ");
+            System.out.print("Digite a operação (+, -, *, /, ^): ");
             operacao = scanner.next().charAt(0);
 
-            if (operacao == '+' || operacao == '-' || operacao == '*' || operacao == '/') {
+            if (operacao == '+' || operacao == '-' || operacao == '*' || operacao == '/' || operacao == '^') {
                 operacaoValida = true; // Sai do ciclo se a opção for válida
             } else {
                 System.out.println("Erro: Operação inválida! Tente novamente.");
@@ -52,6 +52,9 @@ public class Calculadora {
                     return; // Encerra o programa se houver divisão por zero
                 }
                 break;
+            case '^':
+            	resultado = Math.pow(num1, num2);
+            	break;
         }
 
         // Mostrar o resultado final
